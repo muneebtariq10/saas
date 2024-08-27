@@ -24,10 +24,29 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
                                 </NavLink>
+                                <NavLink href={route('feature1.index')} active={route().current('feature1.index')}>
+                                    Feature 1
+                                </NavLink>
+                                <NavLink href={route('feature2.index')} active={route().current('feature2.index')}>
+                                    Feature 2
+                                </NavLink>
                             </div>
                         </div>
 
-                        <div className="hidden sm:flex sm:items-center sm:ms-6">
+                        <div className="hidden sm:flex sm:items-center sm:ms-6 gap-3">
+                            <span className="text-white flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                </svg>
+
+                                { user.available_credits } Credits
+                            </span>
+
+                            <Link
+                                href=''
+                                className='text-white py-1 px-3 rounded border transition-colors hover:text-gray-800 hover:bg-white'
+                            >Get More</Link>
+
                             <div className="ms-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
@@ -94,6 +113,12 @@ export default function Authenticated({ user, header, children }) {
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('feature1.index')} active={route().current('feature1.index')}>
+                            Feature 1
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('feature2.index')} active={route().current('feature2.index')}>
+                            Feature 2
                         </ResponsiveNavLink>
                     </div>
 
