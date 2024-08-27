@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->decimal('price', 10, 2);
+            $table->integer('credits');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
